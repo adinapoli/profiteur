@@ -44,10 +44,10 @@ Library
   Ghc-options:      -Wall
   Hs-source-dirs:   src src/embed src/noembed
   Exposed-Modules:
-    Profiteur.Renderer
-  Other-modules:
     Profiteur.Core
     Profiteur.Parser
+    Profiteur.Renderer
+  Other-modules:
     Profiteur.DataFile
     Profiteur.DataFile.Internal
     Paths_profiteur
