@@ -4,10 +4,13 @@ module Profiteur.Renderer (
   -- * Types
     CssAssets(..)
   , JsAssets(..)
+  , DataType(..)
 
   , includeJs
   , includeCss
+  , readAssetFile
 
+  , encodedProfToHtml
   , reportToHtml
   , jsonReportToHtml
   ) where
@@ -22,9 +25,9 @@ import           System.FilePath            (takeBaseName)
 import           Text.Blaze.Html5            as H hiding (main)
 import           Text.Blaze.Html5.Attributes as A
 
-newtype CssAssets = CssAssets [Html]
+newtype CssAssets = CssAssets { _CssAssets :: [Html] }
 
-newtype JsAssets = JsAssets [Html]
+newtype JsAssets = JsAssets { _JsAssets :: [Html] }
 
 includeJs :: DataType -> IO Html
 includeJs file = do
