@@ -18,7 +18,6 @@ Extra-source-files:
 
 Data-files:
   data/css/main.css
-  data/html/body.html
   data/js/details.js
   data/js/main.js
   data/js/model.js

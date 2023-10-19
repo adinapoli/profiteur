@@ -44,10 +44,9 @@ writeReport h profFile prof = do
           ]
     jsAssets  <- JsAssets  <$> forM jsAssetsFiles includeJs
     cssAssets <- CssAssets <$> forM ["data/css/main.css"] includeCss
-    bodyContent <- readAssetFile "data/html/body.html"
 
     BC8.hPutStrLn h $ BC8.toStrict $ renderHtml $
-      reportToHtml profFile jsAssets cssAssets bodyContent prof
+      reportToHtml profFile jsAssets cssAssets prof
 
 --------------------------------------------------------------------------------
 makeReport :: IO.Handle -> FilePath -> IO ()
